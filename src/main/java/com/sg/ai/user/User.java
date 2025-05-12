@@ -1,4 +1,4 @@
-package com.sg.ai.domain;
+package com.sg.ai.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class User {
 	private int id;
 	private String username;

@@ -7,30 +7,29 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.sg.ai.domain.User;
-
+import com.sg.ai.user.User;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 	@GetMapping("/jblog")
 	public User httpGet() {
-		User finduser= User.builder().id(1).username("ai").password("222").email("g@gmail.com").build();
+		User finduser = User.builder().id(1).username("ai").password("222").email("s@s.com").build();
 		return finduser;
 	}
-
+	
 	@PostMapping("/jblog")
 	public String httpPost(@RequestBody User user) {
-//		return "POST 요청 처리";
-		return "POST 요청 처리값:" + user.toString();
+		return "Post resquest processed" + user.toString();
 	}
 	
 	@PutMapping("/jblog")
 	public String httpPut() {
-		return "PUT request processed";
+		return "Put request procesed";
 	}
+	
 	
 	@DeleteMapping("/jblog")
 	public String httpDelete(@RequestParam int id) {
-		return "Delete request processed id: " + id;
+		return "Delete request processed" + id;
 	}
 }

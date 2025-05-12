@@ -1,6 +1,8 @@
-package com.sg.ai;
+package com.sg.ai.answer;
 
 import java.time.LocalDateTime;
+
+import com.sg.ai.question.Question;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,19 +15,17 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 @Entity
 public class Answer {
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(columnDefinition = "Text")
+	@Column(columnDefinition = "TEXT")
 	private String content;
 	
 	private LocalDateTime createDate;
 	
 	@ManyToOne
 	private Question question;
-
 }
